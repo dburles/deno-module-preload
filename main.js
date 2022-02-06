@@ -29,7 +29,7 @@ app.use(async (context, next) => {
       return next();
     }
 
-    const url = new URL(context.request.url);
+    const url = context.request.url;
 
     if (extname(url.pathname) === ".js") {
       const packagePathUri = `file://${STATIC_ROOT}`;
